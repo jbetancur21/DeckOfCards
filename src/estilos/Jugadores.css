@@ -1,0 +1,41 @@
+.jugadores-container {
+    width: 80%;
+    display: grid;
+    margin: auto auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding-top: 6%;
+}
+
+.jugador {
+    margin-bottom: 20px;
+    padding: 50px;
+}
+
+.jugador-label {
+    display: block;
+    margin-bottom: 5px;
+
+}
+
+.jugador-input {
+    width: 100%;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.botonLogin{
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px rgb(13,110,253) solid;
+    width: 20%;
+}
+
+.botonLogin:hover{
+    background-color: #9e9e9e;
+    border: 2px rgb(0, 0, 0) solid;
+    box-shadow: 6px 8px 10px rgb(197, 197, 197);
+}
