@@ -14,12 +14,12 @@ const Cartas = ({ playerOne, playerTwo }) => {
     const getDeckPlayerOne = async () => {
       const url = `https://deckofcardsapi.com/api/deck/${IdPlayerOne}/draw/?count=10`;
       const { data } = await axios.get(url);
-      setDeckPlayerOne(data);
+      setDeckPlayerOne(data.cards);
     };
     const getDeckPlayerTwo = async () => {
       const url = `https://deckofcardsapi.com/api/deck/${IdPlayerTwo}/draw/?count=10`;
       const { data } = await axios.get(url);
-      setDeckPlayerTwo(data);
+      setDeckPlayerTwo(data.cards);
     };
     getDeckPlayerOne();
     getDeckPlayerTwo();
@@ -28,12 +28,13 @@ const Cartas = ({ playerOne, playerTwo }) => {
   return (
     <div>
       <h2>{playerOne}</h2>
-      <h3>{IdPlayerOne}</h3>
       {deckPlayerOne.map(mazoUno=>(
-        <img src={mazoUno.cards.image} alt="" />
+        <img key={mazoUno.code} src={mazoUno.image} />
       ))}
       <h2>{playerTwo}</h2>
-      <h3>{IdPlayerTwo}</h3>
+      {deckPlayerTwo.map(mazoDos=>(
+        <img key={mazoDos.code} src={mazoDos.image} />
+      ))}
     </div>
   );
 };
