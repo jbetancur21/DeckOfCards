@@ -3,9 +3,6 @@ import IdPlayer from "../data/IdPlayers";
 
 const IdPlayerContext = createContext();
 
-//PREGUNTAR SI NO ES REDUNDANTE LLAMAR EL SET DE CADA ESTADO DENTRO DE CADA FUNCION
-//PREGUNTAR SI UN CONTEXTO PUEDE RECIBIR PARAMETROS
-
 
 const IdPlayerProvider = ({ children }) => {
   const getIdPlayerOne = ()=>{
