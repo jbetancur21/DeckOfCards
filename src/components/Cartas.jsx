@@ -7,9 +7,8 @@ const Cartas = ({ playerOne, playerTwo }) => {
   const { IdPlayerOne, IdPlayerTwo } = useContext(IdPlayerContext);
   const [deckPlayerOne, setDeckPlayerOne] = useState([]);
   const [deckPlayerTwo, setDeckPlayerTwo] = useState([]);
-  const [ternaCartas, setTernaCartas] = useState([]);
   const [aux, setAux] = useState(0);
-  const [winner, setWinner] = useState([{ terna: 0 }, { cuarta: 0 }]);
+  const [winner, setWinner] = useState([]);
 
 
 
@@ -18,29 +17,23 @@ const Cartas = ({ playerOne, playerTwo }) => {
     const url = `https://deckofcardsapi.com/api/deck/${IdPlayerOne}/draw/?count=1`;
     const { data } = await axios.get(url);
 
-    
-    let contador = 0;
+    let positions = [];
     for (let i = 0; i < deckPlayerOne.length; i++) {
       
-      for (let j = 0; j < 10; j++) {
+      for (let j = 0; j < deckPlayerOne.length; j++) {
         if (deckPlayerOne[i].value === deckPlayerOne[j].value) {
           if (deckPlayerOne[i].suit !== deckPlayerOne[j].suit) {
-            contador++
-            console.log("Soy el contador: "+contador);
+            console.log(j)
+              if(positions.indexOf(j)===-1){
+                positions.push(j);
+              }
+              
           }
         }
        
       }
-      
-      setAux(contador)
-      console.log("Soy el Estado: "+ aux);
-      
-      if (aux === 3) {
-        setWinner({ terna: winner.terna + 1 }, { cuarta: winner.cuarta });
-      } else if (aux === 4) {
-        setWinner({ terna: winner.terna }, { cuarta: winner.cuarta + 1 });
-      }
     }
+    setWinner(positions)
     
   };
   useEffect(() => {
