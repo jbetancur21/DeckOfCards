@@ -45,7 +45,9 @@ const DetGanadorProvider = ({children}) =>{
 
     }
         else {
-          let y = 0;
+            console.log("Soy el else")
+            deckPlayerOne.splice(2, 1, data.cards[0]);
+          /* let y = 0;
           let banderaPrueba = false;
           while (y < deckPlayerOne.length && banderaPrueba === false) {
              const prueba = deckPlayerOne.filter(
@@ -58,9 +60,7 @@ const DetGanadorProvider = ({children}) =>{
             }else{
                 y=y+1;
             }
-          }
-          
-          
+          } */
 
         }
         
