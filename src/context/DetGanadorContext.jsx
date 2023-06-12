@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import IdPlayerContext from "../context/IdPlayerContext";
 import axios from "axios";
+import swal from "sweetalert";
 
 const DetGanadorContext = createContext();
 
@@ -40,6 +41,22 @@ const DetGanadorProvider = ({ children }) => {
     }
     deckPlayerOne.splice(x, 1, data.cards[0]);
     getCardPlayerTwo();
+    console.log(winner.length);
+    console.log(WinnerTwo.length);
+
+    if (winner.length === 9) {
+      swal({
+        title: "FELICIDADES!!!!",
+        text: "El ganador es: " + IdPlayerOne,
+        icon: "success",
+      });
+    } else if (WinnerTwo.length === 9) {
+      swal({
+        title: "FELICIDADES!!!!",
+        text: "El ganador es: " + IdPlayerTwo,
+        icon: "success",
+      });
+    }
   };
 
   ///PLAYER TWO ----------------------------------------------------------------------------
