@@ -1,9 +1,5 @@
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: black;
+.HeaderCss {
+    background-color: rgba(108, 110, 92, 0.493);
     padding: 20px;
 }
 
