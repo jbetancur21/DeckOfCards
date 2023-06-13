@@ -10,16 +10,16 @@ import { IdPlayerProvider } from './context/IdPlayerContext';
 import { DetGanadorProvider } from './context/DetGanadorContext';
 
 function App() {
-   const [playerOne, setPlayerOne] = useState('')
-  const [playerTwo, setPlayerTwo] = useState('')
+   /* const [playerOne, setPlayerOne] = useState('')
+  const [playerTwo, setPlayerTwo] = useState('') */
 
   return (
       <IdPlayerProvider>
         <DetGanadorProvider>
         <Routes>
           <Route path="/" element={<Header/>}>
-          <Route path="/" element={<Jugadores setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo}/>}> </Route>
-          <Route path="Cartas" element={<Cartas playerOne={playerOne} playerTwo={playerTwo}/>}> </Route>
+          <Route path="/" element={<Jugadores />}> </Route>
+          <Route path="Cartas" element={<Cartas />}> </Route>
           </Route>
         </Routes>
         </DetGanadorProvider>

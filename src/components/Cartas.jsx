@@ -5,8 +5,8 @@ import IdPlayerContext from "../context/IdPlayerContext";
 import DetGanadorContext from "../context/DetGanadorContext";
 
 
-const Cartas = ({ playerOne, playerTwo }) => {
-  const { IdPlayerOne, IdPlayerTwo } = useContext(IdPlayerContext);
+const Cartas = (/* { playerOne, playerTwo } */) => {
+  const { IdPlayerOne, IdPlayerTwo,playerTwo,playerOne } = useContext(IdPlayerContext);
   const {getDeckPlayerOne, getDeckPlayerTwo,getCard,deckPlayerOne,deckPlayerTwo} = useContext(DetGanadorContext)
 
   useEffect(() => {

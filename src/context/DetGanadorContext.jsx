@@ -6,7 +6,7 @@ import swal from "sweetalert";
 const DetGanadorContext = createContext();
 
 const DetGanadorProvider = ({ children }) => {
-  const { IdPlayerOne, IdPlayerTwo } = useContext(IdPlayerContext);
+  const { IdPlayerOne, IdPlayerTwo,playerTwo,playerOne } = useContext(IdPlayerContext);
   const [winner, setWinner] = useState([]);
   const [WinnerTwo, setWinnerTwo] = useState([]);
   const [deckPlayerOne, setDeckPlayerOne] = useState([]);
@@ -47,13 +47,13 @@ const DetGanadorProvider = ({ children }) => {
     if (winner.length === 9) {
       swal({
         title: "FELICIDADES!!!!",
-        text: "El ganador es: " + IdPlayerOne,
+        text: "El ganador es: " + playerOne,
         icon: "success",
       });
     } else if (WinnerTwo.length === 9) {
       swal({
         title: "FELICIDADES!!!!",
-        text: "El ganador es: " + IdPlayerTwo,
+        text: "El ganador es: " + playerTwo,
         icon: "success",
       });
     }

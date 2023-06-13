@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import "../estilos/Jugadores.css";
 import { GiCardKingDiamonds } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import styles from "../estilos/Header.css";
-
-const Jugadores = ({ setPlayerOne, setPlayerTwo }) => {
+import IdPlayerContext from "../context/IdPlayerContext";
+/*  */
+const Jugadores = (/* { setPlayerOne, setPlayerTwo } */) => {
+  const { setPlayerOne,  setPlayerTwo } = useContext(IdPlayerContext);
   const [users, setUsers] = useState([]);
 
   const handlerChange = (e) => {

@@ -5,6 +5,11 @@ const IdPlayerContext = createContext();
 
 
 const IdPlayerProvider = ({ children }) => {
+
+  const [playerOne, setPlayerOne] = useState('')
+  const [playerTwo, setPlayerTwo] = useState('')
+
+
   const getIdPlayerOne = ()=>{
     IdPlayer().then((newIdPLayer) => {
       setIdPlayerOne(newIdPLayer.deck_id);
@@ -19,7 +24,7 @@ const IdPlayerProvider = ({ children }) => {
   const [IdPlayerOne, setIdPlayerOne] = useState(getIdPlayerOne);
   const [IdPlayerTwo, setIdPlayerTwo] = useState(getIdPlayerTwo);
 
-  const data = { IdPlayerOne, IdPlayerTwo };
+  const data = { IdPlayerOne, IdPlayerTwo,playerOne, setPlayerOne, playerTwo, setPlayerTwo};
   return (
     <IdPlayerContext.Provider value={data}>
       {children}
