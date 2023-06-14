@@ -6,7 +6,7 @@ import DetGanadorContext from "../context/DetGanadorContext";
 
 
 const Cartas = (/* { playerOne, playerTwo } */) => {
-  const { IdPlayerOne, IdPlayerTwo,playerTwo,playerOne } = useContext(IdPlayerContext);
+  const { IdPlayerOne, IdPlayerTwo,playerTwo,playerOne,flagButton } = useContext(IdPlayerContext);
   const {getDeckPlayerOne, getDeckPlayerTwo,getCard,deckPlayerOne,deckPlayerTwo} = useContext(DetGanadorContext)
 
   useEffect(() => {
@@ -24,9 +24,11 @@ const Cartas = (/* { playerOne, playerTwo } */) => {
       {deckPlayerTwo.map((mazoDos) => (
         <img key={mazoDos.code} src={mazoDos.image} />
       ))}
-      <button className="botonTraer" onClick={getCard}>
+      {flagButton?<button className="botonTraer" onClick={getCard} hidden>
         Pedir Carta
-      </button>
+      </button>:<button className="botonTraer" onClick={getCard}>
+      Pedir Carta
+      </button>}
     </div>
   );
 };

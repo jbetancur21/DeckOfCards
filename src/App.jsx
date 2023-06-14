@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Header/>}>
           <Route path="/" element={<Jugadores />}> </Route>
-          <Route path="Cartas" element={<Cartas />}> </Route>
+          <Route path="Cartas" element={<Cartas/>}> </Route>
           </Route>
         </Routes>
         </DetGanadorProvider>

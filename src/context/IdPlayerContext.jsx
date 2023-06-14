@@ -8,6 +8,7 @@ const IdPlayerProvider = ({ children }) => {
 
   const [playerOne, setPlayerOne] = useState('')
   const [playerTwo, setPlayerTwo] = useState('')
+  const [flagButton, setFlagButton] = useState(false)
 
 
   const getIdPlayerOne = ()=>{
@@ -24,7 +25,7 @@ const IdPlayerProvider = ({ children }) => {
   const [IdPlayerOne, setIdPlayerOne] = useState(getIdPlayerOne);
   const [IdPlayerTwo, setIdPlayerTwo] = useState(getIdPlayerTwo);
 
-  const data = { IdPlayerOne, IdPlayerTwo,playerOne, setPlayerOne, playerTwo, setPlayerTwo};
+  const data = { IdPlayerOne, IdPlayerTwo,playerOne, setPlayerOne, playerTwo, setPlayerTwo,flagButton,setFlagButton};
   return (
     <IdPlayerContext.Provider value={data}>
       {children}
